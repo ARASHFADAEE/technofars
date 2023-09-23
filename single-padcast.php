@@ -6,27 +6,43 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text episodes__breadcrumb__text">
+                    <?php 
+            
+            if ( have_posts() ) :
+                while ( have_posts() ) : the_post(); ?>
                         <ul>
-                            <li><span class="icon_calendar"></span> شنبه 18 مهر 99</li>
-                            <li><span class="icon_profile"></span> توسط سیروان ویسی</li>
-                            <li><span class="icon_tags_alt"></span> رادیو، موسیقی، آموزشی</li>
+                            <li><span class="icon_calendar"></span><?php the_date()?></li>
+                            <li><span class="icon_tags_alt"></span><?php the_category()?></li>
                         </ul>
-                        <h2>قسمت 22 : بازاریابی دیجیتال و تبلیغات هدفمند</h2>
+                        <h2><?php the_title()?></h2>
+
+                        <?php
+                endwhile;
+            endif;
+            
+            ?>
                     </div>
                 </div>
             </div>
         </div>
         <div class="single__track">
+            <?php 
+            
+            if ( have_posts() ) :
+                while ( have_posts() ) : the_post(); ?>
+
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="single__track__item">
                             <div class="single__track__item__pic">
-                                <img src="img/hero/hero-track.jpg" alt="">
+
+                            <?php the_post_thumbnail()?>
+                                
                             </div>
                             <div class="single__track__item__text">
-                                <h5>کهکشان راه شیری</h5>
-                                <span>سیروان ویسی</span>
+                                <h5><?php the_title(); ?></h5>
+                                <span><?php echo esc_html( get_field('Podcast-creator') ); ?></span>
                             </div>
                         </div>
                     </div>
@@ -65,13 +81,19 @@
                                 </div>
                                 <div class="jp-btns rtl">
                                     <a href="#"><i class="social_share"></i> ارسال</a>
-                                    <a href="#"><i class="fa fa-download"></i> دانلود</a>
+                                    <a href="<?php echo  esc_attr( get_field('padcast_link') ); ?>"><i class="fa fa-download"></i> دانلود</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <?php
+                endwhile;
+            endif;
+            
+            ?>
         </div>
         </section>
         <!-- Breadcrumb Section End -->
@@ -82,39 +104,8 @@
                 <div class="row">
                     <div class="col-lg-9">
                         <div class="episodes__details__content">
-                            <div class="episodes__details__text">
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-                                </p>
-                                <h4>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h4>
-                                <p>
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-                                </p>
-                                <ul>
-                                    <li>V7 چاپ عکس دیجیتال</li>
-                                    <li>5 دلیل برای انتخاب دفترچه یادداشت در رایانه</li>
-                                    <li>لپ تاپ های سونی هنوز بخشی از خانواده سونی هستند</li>
-                                    <li>در یافتن اطلاعات آنلاین کمک کنید</li>
-                                </ul>
-                            </div>
-                            <div class="episodes__details__pic">
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <img src="img/episodes-single/eps-1.jpg" alt="">
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <img src="img/episodes-single/eps-2.jpg" alt="">
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <img src="img/episodes-single/eps-3.jpg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="episodes__details__desc">
-                                <p>
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
-                                </p>
-                            </div>
+                            <?php the_content()?>
+
                             <div class="episodes__details__btns">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6">
@@ -173,23 +164,34 @@
                             </ul>
                         </div>
                         <div class="sidebar__recent">
-                            <h4>پست های جدید</h4>
-                            <a href="#" class="sidebar__recent__item">
-                                <h6>قسمت 04 : چگونه یک شبه پولدار شویم - نقد و بررسی</h6>
-                                <p><span class="icon_calendar"></span> یکشنبه 21 مهر 99</p>
+                            <h4>جدید ترین پادکست ها</h4>
+                            <?php
+                            $array = array(
+
+                                'post_type' => 'padcast',
+                            
+                                'posts_per_page' => 3,
+
+                            
+                            );
+                            $query=new WP_Query($array);
+
+                            if ($query->have_posts()) {
+                                while ($query->have_posts()) : $query->the_post(); 
+
+                            ?>
+
+
+                            <a href="<?php the_permalink()?>" class="sidebar__recent__item">
+                                <h6><?php the_title()?></h6>
+                                <p><span class="icon_calendar"></span><?php the_title()?></p>
                             </a>
-                            <a href="#" class="sidebar__recent__item">
-                                <h6>قسمت 07 : چگونه یک مهندس نرم افزار موفق شویم</h6>
-                                <p><span class="icon_calendar"></span> یکشنبه 21 مهر 99</p>
-                            </a>
-                            <a href="#" class="sidebar__recent__item">
-                                <h6>قسمت 03 : رازهای جهان هستی و کهکشان ها</h6>
-                                <p><span class="icon_calendar"></span> یکشنبه 21 مهر 99</p>
-                            </a>
-                            <a href="#" class="sidebar__recent__item">
-                                <h6> قسمت 21 : رادیو صدای شب - ایده پردازی و اجرا</h6>
-                                <p><span class="icon_calendar"></span> یکشنبه 21 مهر 99</p>
-                            </a>
+
+                            <?php
+   endwhile;
+}
+
+?>
                         </div>
                         <div class="sidebar__banner set-bg" data-setbg="img/episodes-single/sidebar-banner.jpg">
                             <span>بهترین قالب سفارشی</span>
