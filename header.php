@@ -12,6 +12,14 @@
           rel="stylesheet">
           <?php wp_head()?>
 
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri()?>/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri()?>/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri()?>/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri()?>/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri()?>/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri()?>/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri()?>/css/style.css" type="text/css">
+
 </head>
 
 <body>
