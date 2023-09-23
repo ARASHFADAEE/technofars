@@ -1,105 +1,7 @@
-<!DOCTYPE html>
-<html lang="zxx">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Megapod Template">
-    <meta name="keywords" content="Megapod, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>مگا پاد | مشخصات پادکست</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap"
-          rel="stylesheet">
-
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-</head>
-
-<body>
-<!-- Page Preloder -->
-<div id="preloder">
-    <div class="loader"></div>
-</div>
-<!-- Offcanvas Menu Begin -->
-<div class="offcanvas-menu-overlay"></div>
-<div class="offcanvas-menu-wrapper">
-    <div class="offcanvas__search">
-        <form action="#">
-            <input type="text" placeholder="کلمه کلیدی + اینتر..">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
-    <div class="offcanvas__logo">
-        <a href="./index.html"><img src="img/logo.png" alt=""></a>
-    </div>
-    <div id="mobile-menu-wrap"></div>
-    <div class="offcanvas__social">
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-pinterest"></i></a>
-        <a href="#"><i class="fa fa-instagram"></i></a>
-        <a href="#"><i class="fa fa-dribbble"></i></a>
-    </div>
-</div>
-<!-- Offcanvas Menu End -->
-
-<!-- Header Section Begin -->
-<header class="header">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="header__logo">
-                    <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                </div>
-                <nav class="header__menu mobile-menu">
-                    <ul>
-                        <li><a href="./index.html">خانه</a></li>
-                        <li><a href="./about.html">درباره ما</a></li>
-                        <li><a href="./episodes.html">پادکست ها</a></li>
-                        <li class="active"><a href="#">صفحات</a>
-                            <ul class="dropdown">
-                                <li><a href="./episodes-details.html">مشخصات پادکست</a></li>
-                                <li><a href="./blog.html">بلاگ</a></li>
-                                <li><a href="./blog-details.html">مشخصات بلاگ</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="./contact.html">ارتباط با ما</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="col-lg-4">
-                <div class="header__left">
-                    <div class="header__left__search">
-                        <form action="#">
-                            <input type="text" placeholder="کلمه کلیدی + اینتر..">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </form>
-                    </div>
-                    <div class="header__left__social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-pinterest"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="canvas__open"><i class="fa fa-bars"></i></div>
-    </div>
-</header>
-<!-- Header Section End -->
+<?php get_header()?>
 
     <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-option spad set-bg" data-setbg="img/breadcrumb-bg.jpg">
+    <section class="breadcrumb-option spad set-bg" data-setbg="<?php echo get_template_directory_uri()?>/img/hero/hero-bg.jpg" style="background-image: url(<?php echo get_template_directory_uri()?>/img/hero/hero-bg.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -130,7 +32,7 @@
                     </div>
                     <div class="col-lg-8" style="direction: ltr !important;">
                         <div class="single__track__option ltr">
-                            <div class="jp-jplayer jplayer" data-ancestor=".jp_container" data-url="https://dl.technofars.com/Podcasts/roadmap.mp3">
+                            <div class="jp-jplayer jplayer" data-ancestor=".jp_container" data-url="<?php echo  esc_attr( get_field('padcast_link') ); ?>">
                             </div>
                             <div class="jp-audio jp_container" role="application" aria-label="media player">
                                 <div class="jp-gui jp-interface">
@@ -310,65 +212,6 @@
     </section>
     <!-- Episodes Details Section End -->
 
-    <!-- Footer Section Begin -->
-    <footer class="footer set-bg" data-setbg="img/footer-bg.jpg">
-        <div class="container">
-            <div class="footer__subscriber">
-                <div class="row">
-                    <div class="col-lg-5">
-                        <div class="footer__subscriber__text">
-                            <h3>عضویت رایگان در خبرنامه!</h3>
-                            <p>جهت دریافت جدیدترین پادکست ها مشترک خبرنامه ما شوید.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 offset-lg-2">
-                        <form action="#" class="footer__subscriber__form">
-                            <input type="text" placeholder="آدرس ایمیل خود را وارد کنید">
-                            <button type="submit" class="site-btn">عضویت</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-9 col-md-9">
-                    <div class="footer__widget">
-                        <div class="footer__logo">
-                            <a href="#"><img src="img/logo.png" alt=""></a>
-                        </div>
-                        <p class="footer__copyright__text">© کپی رایت
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script>
-                            - تمامی حقوق محفوظ است.
-                        </p>
-                    </div>
-            </div>
-            <div class="col-lg-3 col-md-3">
-                <div class="footer__social">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-youtube-play"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- Footer Section End -->
-
-<!-- Js Plugins -->
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/mixitup.min.js"></script>
-<script src="js/jquery.slicknav.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/main.js"></script>
-
-<!-- Music Plugin -->
-<script src="js/jquery.jplayer.min.js"></script>
-<script src="js/jplayerInit.js"></script>
-</body>
+<?php get_footer()?>
 
 </html>
