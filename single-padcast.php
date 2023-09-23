@@ -7,20 +7,27 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__text episodes__breadcrumb__text">
                     <?php 
+                        $array = array(
+
+                            'post_type' => 'padcast',
+                            'posts_per_page' => 1,
             
-            if ( have_posts() ) :
-                while ( have_posts() ) : the_post(); ?>
+                        
+                        );
+                        $query=new WP_Query($array);
+
+                        if ($query->have_posts()) {
+                            while ($query->have_posts()) : $query->the_post();  ?>
                         <ul>
                             <li><span class="icon_calendar"></span><?php the_date()?></li>
                             <li><span class="icon_tags_alt"></span><?php the_category()?></li>
                         </ul>
                         <h2><?php the_title()?></h2>
-
-                        <?php
-                endwhile;
-            endif;
-            
-            ?>
+<?php
+   endwhile;
+}
+?>
+=
                     </div>
                 </div>
             </div>

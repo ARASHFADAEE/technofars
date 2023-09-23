@@ -3,79 +3,46 @@
 <section class="hero spad set-bg" data-setbg="<?php echo get_template_directory_uri()?>/img/hero/hero-bg.jpg">
     <div class="container">
         <div class="row">
+            <?php 
+            
+            $array = array(
+
+                'post_type' => 'padcast',
+                'posts_per_page' => 1,
+
+            
+            );
+            $query=new WP_Query($array);
+
+            if ($query->have_posts()) {
+                while ($query->have_posts()) : $query->the_post(); 
+
+            ?>
+            
+            
+            
             <div class="col-lg-6">
                 <div class="hero__text">
-                    <h5><span class="icon_calendar"></span> یکشنبه 21 مهر 99</h5>
-                    <h2>قسمت 5 : چگونه یک مهندس کامپیوتر خبره شویم، از صفر تا صد!</h2>
+                    <h5><span class="icon_calendar"></span><?php the_date();?></h5>
+                    <h2><?php the_title()?></h2>
                     <a href="#" class="primary-btn">اشتراک ویژه</a>
                     <a href="#" class="primary-btn white-btn">ثبت نام رایگان</a>
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="hero__pic set-bg" data-setbg="<?php echo get_template_directory_uri()?>/img/hero/hero-video.png">
-                    <a href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/249690664&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-                       class="play-btn video-popup"><img src="<?php echo get_template_directory_uri()?>/img/hero/play-btn.png" alt=""></a>
+                <div class="hero__pic set-bg" data-setbg="<?php the_post_thumbnail_url()?>" >
+                    <a href="<?php the_permalink()?>"
+                       class="play-btn video-popup"><img  src="<?php echo get_template_directory_uri()?>/img/hero/play-btn.png" alt=""></a>
                 </div>
             </div>
+            
+            <?php
+   endwhile;
+}
+?>
         </div>
     </div>
-    <div class="single__track">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="single__track__item">
-                        <div class="single__track__item__pic">
-                            <img src="<?php echo get_template_directory_uri()?>/img/hero/hero-track.jpg" alt="">
-                        </div>
-                        <div class="single__track__item__text">
-                            <h5>کهکشان راه شیری</h5>
-                            <span>سیروان ویسی</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8" style="direction: ltr !important;">
-                    <div class="single__track__option ltr">
-                        <div class="jp-jplayer jplayer" data-ancestor=".jp_container" data-url="<?php echo get_template_directory_uri()?>/music-files/2.mp3">
-                        </div>
-                        <div class="jp-audio jp_container" role="application" aria-label="media player">
-                            <div class="jp-gui jp-interface">
-                                <!-- Player Controls -->
-                                <div class="player_controls_box">
-                                    <button class="jp-play player_button" tabindex="0"></button>
-                                </div>
-                                <!-- Progress Bar -->
-                                <div class="player_bars">
-                                    <div class="jp-progress">
-                                        <div class="jp-seek-bar">
-                                            <div>
-                                                <div class="jp-play-bar">
-                                                    <div class="jp-current-time" role="timer" aria-label="time">0:00
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="jp-duration ml-auto" role="timer" aria-label="duration">00:00</div>
-                                </div>
-                                <!-- Volume Controls -->
-                                <div class="jp-volume-controls">
-                                    <button class="jp-mute" tabindex="0"><span
-                                            class="icon_volume-high"></span></button>
-                                    <div class="jp-volume-bar">
-                                        <div class="jp-volume-bar-value" style="width: 0%;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="jp-btns rtl">
-                                <a href="#"><i class="social_share"></i> ارسال</a>
-                                <a href="#"><i class="fa fa-download"></i> دانلود</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </section>
 <!-- Hero Section End -->
 
@@ -91,8 +58,8 @@
                     <ul class="filter__controls">
                         <li class="active" data-filter="*">همه پادکست ها</li>
                         <li data-filter=".entrepreneurship">تکنولوژی</li>
-                        <li data-filter=".media">سینما</li>
-                        <li data-filter=".tech">علمی</li>
+                        <li data-filter=".programming">برنامه نویسی</li>
+                        <li data-filter=".tech">توسعه فردی</li>
                         <li data-filter=".tutorials">آموزشی</li>
                     </ul>
                 </div>
@@ -100,24 +67,40 @@
         </div>
         <div class="row podcast-filter">
             <div class="col-lg-12 mix entrepreneurship">
+            <?php 
+            
+            $array = array(
+
+                'post_type' => 'padcast',
+                'posts_per_page' => 1,
+                'category'=>'technology',
+
+            
+            );
+            $query=new WP_Query($array);
+
+            if ($query->have_posts()) {
+                while ($query->have_posts()) : $query->the_post(); 
+
+            ?>
                 <div class="podcast__item">
                     <div class="podcast__item__pic">
-                        <img src="<?php echo get_template_directory_uri()?>/img/podcast/podcast-1.jpg" alt="">
+                    <a href="<?php the_permalink()?>"><?php the_post_thumbnail()?></a>
                     </div>
                     <div class="podcast__item__text">
-                        <a href="#" class="heart-icon"><i class="fa fa-heart"></i></a>
+                        <a href="<?php the_permalink()?>" class="heart-icon"><i class="fa fa-heart"></i></a>
                         <ul>
-                            <li><span class="icon_calendar"></span> یکشنبه 21 مهر 99</li>
-                            <li><span class="icon_profile"></span> توسط <b>سیروان ویسی</b></li>
-                            <li><span class="icon_tags_alt"></span> آموزشی، رسانه، تکنولوژی</li>
+                            <li><span class="icon_calendar"></span><?php echo get_the_date()?></li>
+                            <li><span class="icon_profile"></span> توسط <b><?php echo esc_html( get_field('Podcast-creator') ); ?></b></li>
+                            <li><span class="icon_tags_alt"></span><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?></li>
                         </ul>
-                        <h4>قسمت 04 : چگونه یک شبه پولدار شویم</h4>
+                        <a href="<?php the_permalink()?>"><h4><?php the_title()?></h4></a>
                         <p>
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود...
+                            <?php the_excerpt()?>
                         </p>
                         <div class="track__option ltr">
                             <div class="jp-jplayer jplayer" data-ancestor=".jp_container-1"
-                                 data-url="<?php echo get_template_directory_uri()?>/music-files/3.mp3"></div>
+                                 data-url="<?php echo  esc_attr( get_field('padcast_link') ); ?>"></div>
                             <div class="jp-audio jp_container-1" role="application" aria-label="media player">
                                 <div class="jp-gui jp-interface">
                                     <!-- Player Controls -->
@@ -151,18 +134,101 @@
                                 </div>
                                 <div class="jp-btns rtl">
                                     <a href="#"><i class="social_share"></i> ارسال</a>
-                                    <a href="#"><i class="fa fa-download"></i> دانلود</a>
+                                    <a href="<?php echo  esc_attr( get_field('padcast_link') ); ?>"><i class="fa fa-download"></i> دانلود</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <?php
+   endwhile;
+}
+?>
             </div>
+            <div class="col-lg-12 mix programming">
+                <?php
+                            
+            $array = array(
+
+                'post_type' => 'padcast',
+                'posts_per_page' => 1,
+                'category'=>'programming',
+
             
-            <div class="col-lg-12 mix media">
-                <div class="podcast__item">
+            );
+            $query=new WP_Query($array);
+
+            if ($query->have_posts()) {
+                while ($query->have_posts()) : $query->the_post(); 
+
+            ?>
+            <div class="podcast__item">
                     <div class="podcast__item__pic">
-                        <img src="<?php echo get_template_directory_uri()?>/img/podcast/podcast-2.jpg" alt="">
+                    <a href="<?php the_permalink()?>"><?php the_post_thumbnail()?></a>
+                    </div>
+                    <div class="podcast__item__text">
+                        <a href="<?php the_permalink()?>" class="heart-icon"><i class="fa fa-heart"></i></a>
+                        <ul>
+                            <li><span class="icon_calendar"></span><?php echo get_the_date()?></li>
+                            <li><span class="icon_profile"></span> توسط <b><?php echo esc_html( get_field('Podcast-creator') ); ?></b></li>
+                            <li><span class="icon_tags_alt"></span><?php foreach((get_the_category()) as $category) { echo $category->cat_name . ' '; } ?></li>
+                        </ul>
+                        <a href="<?php the_permalink()?>"><h4><?php the_title()?></h4></a>
+                        <p>
+                            <?php the_excerpt()?>
+                        </p>
+                        <div class="track__option ltr">
+                            <div class="jp-jplayer jplayer" data-ancestor=".jp_container-1"
+                                 data-url="<?php echo  esc_attr( get_field('padcast_link') ); ?>"></div>
+                            <div class="jp-audio jp_container-1" role="application" aria-label="media player">
+                                <div class="jp-gui jp-interface">
+                                    <!-- Player Controls -->
+                                    <div class="player_controls_box">
+                                        <button class="jp-play player_button" tabindex="0"></button>
+                                    </div>
+                                    <!-- Progress Bar -->
+                                    <div class="player_bars">
+                                        <div class="jp-progress">
+                                            <div class="jp-seek-bar">
+                                                <div>
+                                                    <div class="jp-play-bar">
+                                                        <div class="jp-current-time" role="timer" aria-label="time">
+                                                            0:00
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="jp-duration ml-auto" role="timer" aria-label="duration">00:00
+                                        </div>
+                                    </div>
+                                    <!-- Volume Controls -->
+                                    <div class="jp-volume-controls">
+                                        <button class="jp-mute" tabindex="0"><span
+                                                class="icon_volume-high"></span></button>
+                                        <div class="jp-volume-bar">
+                                            <div class="jp-volume-bar-value" style="width: 0%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="jp-btns rtl">
+                                    <a href="#"><i class="social_share"></i> ارسال</a>
+                                    <a href="<?php echo  esc_attr( get_field('padcast_link') ); ?>"><i class="fa fa-download"></i> دانلود</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+   endwhile;
+}
+?>
+                </div>
+            </div>
+            <div class="col-lg-12 mix tech">
+                <div class="podcast__item ">
+                    <div class="podcast__item__pic">
+                        <img src="<?php echo get_template_directory_uri()?>/img/podcast/podcast-3.jpg" alt="">
                     </div>
                     <div class="podcast__item__text">
                         <a href="#" class="heart-icon"><i class="fa fa-heart"></i></a>
@@ -171,14 +237,14 @@
                             <li><span class="icon_profile"></span> توسط <b>سیروان ویسی</b></li>
                             <li><span class="icon_tags_alt"></span> آموزشی، رسانه، تکنولوژی</li>
                         </ul>
-                        <h4>قسمت 07 : چگونه یک مهندس نرم افزار موفق شویم</h4>
+                        <h4>قسمت 03 : رازهای جهان هستی و کهکشان ها</h4>
                         <p>
                             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود...
                         </p>
                         <div class="track__option ltr">
-                            <div class="jp-jplayer jplayer" data-ancestor=".jp_container-2"
-                                 data-url="<?php echo get_template_directory_uri()?>/music-files/4.mp3"></div>
-                            <div class="jp-audio jp_container-2" role="application" aria-label="media player">
+                            <div class="jp-jplayer jplayer" data-ancestor=".jp_container-3"
+                                 data-url="<?php echo get_template_directory_uri()?>/music-files/5.mp3"></div>
+                            <div class="jp-audio jp_container-3" role="application" aria-label="media player">
                                 <div class="jp-gui jp-interface">
                                     <!-- Player Controls -->
                                     <div class="player_controls_box">
@@ -218,7 +284,65 @@
                     </div>
                 </div>
             </div>
-
+            <div class="col-lg-12 mix tutorials">
+                <div class="podcast__item">
+                    <div class="podcast__item__pic">
+                        <img src="<?php echo get_template_directory_uri()?>/img/podcast/podcast-4.jpg" alt="">
+                    </div>
+                    <div class="podcast__item__text">
+                        <a href="#" class="heart-icon"><i class="fa fa-heart"></i></a>
+                        <ul>
+                            <li><span class="icon_calendar"></span> یکشنبه 21 مهر 99</li>
+                            <li><span class="icon_profile"></span> توسط <b>سیروان ویسی</b></li>
+                            <li><span class="icon_tags_alt"></span> آموزشی، رسانه، تکنولوژی</li>
+                        </ul>
+                        <h4>قسمت 21 : رادیو صدای شب</h4>
+                        <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود...
+                        </p>
+                        <div class="track__option ltr">
+                            <div class="jp-jplayer jplayer" data-ancestor=".jp_container-4"
+                                 data-url="<?php echo get_template_directory_uri()?>/music-files/6.mp3"></div>
+                            <div class="jp-audio jp_container-4" role="application" aria-label="media player">
+                                <div class="jp-gui jp-interface">
+                                    <!-- Player Controls -->
+                                    <div class="player_controls_box">
+                                        <button class="jp-play player_button" tabindex="0"></button>
+                                    </div>
+                                    <!-- Progress Bar -->
+                                    <div class="player_bars">
+                                        <div class="jp-progress">
+                                            <div class="jp-seek-bar">
+                                                <div>
+                                                    <div class="jp-play-bar">
+                                                        <div class="jp-current-time" role="timer" aria-label="time">
+                                                            0:00
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="jp-duration ml-auto" role="timer" aria-label="duration">00:00
+                                        </div>
+                                    </div>
+                                    <!-- Volume Controls -->
+                                    <div class="jp-volume-controls">
+                                        <button class="jp-mute" tabindex="0"><span
+                                                class="icon_volume-high"></span></button>
+                                        <div class="jp-volume-bar">
+                                            <div class="jp-volume-bar-value" style="width: 0%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="jp-btns rtl">
+                                    <a href="#"><i class="social_share"></i> ارسال</a>
+                                    <a href="#"><i class="fa fa-download"></i> دانلود</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
