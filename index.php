@@ -19,12 +19,13 @@
 
             ?>
             
-            
+
             
             <div class="col-lg-6">
                 <div class="hero__text">
                     <h5><span class="icon_calendar"></span><?php the_date();?></h5>
                     <h2><?php the_title()?></h2>
+                    <p><?php the_excerpt()?></p>
                     <a href="#" class="primary-btn">اشتراک ویژه</a>
                     <a href="#" class="primary-btn white-btn">ثبت نام رایگان</a>
                 </div>
@@ -61,7 +62,7 @@ wp_reset_postdata();
         <?php
 $array = array(
 
-    'posts_per_page' => 10,
+    'posts_per_page' => 6,
     'post_type'=>'padcast',
 
 
