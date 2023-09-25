@@ -117,6 +117,7 @@ function create_taxonomies_for_padcast() {
         'query_var'         => true,
     );
 
+
     register_taxonomy( 'padcast', 'padcast' , $ar );
 }
 add_action( 'init', 'create_taxonomies_for_padcast');
