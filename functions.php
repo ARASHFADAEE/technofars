@@ -28,6 +28,12 @@ function title_setup(){
     add_theme_support('title-tag');
     // add_theme_support('automatic-feed-links');
     add_theme_support('post-thumbnails');
+
+    register_nav_menus(
+        array(
+            'main-menu' => __( 'فهرست اصلی ' ),
+        )
+    );
 }
 add_action('after_setup_theme' , 'title_setup');
 
@@ -131,3 +137,10 @@ add_filter('get_the_archive_title', function ($title) {
     }
     return $title;
 });
+
+
+// function custom_submenu_class($args) {
+//     $args['submenu_class'] = 'dropdown';
+//     return $args;
+// }
+// add_filter('wp_nav_menu_args', 'custom_submenu_class');

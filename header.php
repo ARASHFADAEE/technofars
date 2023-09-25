@@ -58,19 +58,12 @@
                     <a href="<?php echo get_home_url()?>"><img src="<?php echo get_template_directory_uri()?>/img/logo.png" alt=""></a>
                 </div>
                 <nav class="header__menu mobile-menu">
-                    <ul>
-                        <li class="active"><a href="./index.html">خانه</a></li>
-                        <li><a href="./about.html">درباره ما</a></li>
-                        <li><a href="./episodes.html">پادکست ها</a></li>
-                        <li><a href="#">صفحات</a>
-                            <ul class="dropdown">
-                                <li><a href="./episodes-details.html">مشخصات پادکست</a></li>
-                                <li><a href="./blog.html">بلاگ</a></li>
-                                <li><a href="./blog-details.html">مشخصات بلاگ</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="./contact.html">ارتباط با ما</a></li>
-                    </ul>
+                <?php 
+$args = array(
+
+    'theme_location'=>'main-menu');
+wp_nav_menu( $args ); 
+?>
                 </nav>
             </div>
             <div class="col-lg-4">
