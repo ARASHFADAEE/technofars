@@ -18,14 +18,11 @@
                 while ($query->have_posts()) : $query->the_post(); 
 
             ?>
-            
-
-            
             <div class="col-lg-6">
                 <div class="hero__text">
                     <h5><span class="icon_calendar"></span><?php the_date();?></h5>
                     <h2><?php the_title()?></h2>
-                    <p><?php the_excerpt()?></p>
+                    <p><?php echo get_the_excerpt($query)?></p>
                     <a href="#" class="primary-btn">اشتراک ویژه</a>
                     <a href="#" class="primary-btn white-btn">ثبت نام رایگان</a>
                 </div>
