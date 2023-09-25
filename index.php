@@ -78,7 +78,11 @@ $query = new WP_Query($array);
                 ?>
    <div class="col-lg-4 col-md-6">
     <div class="episodes__item set-bg" data-setbg="<?php echo esc_url(get_the_post_thumbnail_url(null, 'large')); ?>">
-        <div class="tags"><span class="icon_tags_alt"></span><?php the_category() ?></div>
+        <div class="tags"><span class="icon_tags_alt"></span>    <?php
+foreach ( get_categories() as $category ) :
+     echo $category->name;
+endforeach;
+?></div>
         <div class="time ltr">40:00<span class="icon_clock_alt"></span></div>
         <a href="<?php the_permalink(); ?>" class="play-btn "><img src="<?php echo get_template_directory_uri(); ?>/img/play.png" alt=""></a>
         <div class="episodes__text">

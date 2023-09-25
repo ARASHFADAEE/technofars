@@ -160,14 +160,22 @@
                             </form>
                         </div>
                         <div class="sidebar__categories">
-                            <h4>دسته بندی ها</h4>
+                            <h4>دسته بندی پادکست ها</h4>
                             <ul>
-                                <li><a href="#"><i class="fa fa-angle-double-left"></i> کارآفرینی</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-left"></i> رسانه</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-left"></i> تکنولوژی</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-left"></i> آموزشی</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-left"></i> کسب و کار</a></li>
-                                <li><a href="#"><i class="fa fa-angle-double-left"></i> سرگرمی</a></li>
+                            <?php
+    $custom_post_type = ''; // نام پست‌های نوع سفارشی شما
+    $categories = get_categories(array(
+        'taxonomy' => 'padcast', // نام دسته‌بندی‌های پست‌های نوع سفارشی
+        'post_type' => $custom_post_type,
+        'hide_empty' => false, // نمایش دسته‌بندی‌های خالی
+    ));
+
+    foreach ($categories as $category) {
+        $category_link = get_category_link($category->term_id);
+        echo '<li><a href="' . esc_url($category_link) . '"><i class="fa fa-angle-double-left"></i> ' . esc_html($category->name) . '</a></li>';
+    }
+    ?>
+
                             </ul>
                         </div>
                         <div class="sidebar__recent">
