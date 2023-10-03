@@ -1,4 +1,3 @@
-<?php get_header()?>
 <style>
     
 /*======================
@@ -33,10 +32,26 @@
     background: #39ac31;
     margin: 20px 0;
     display: inline-block;}
-	.contant_box_404{ margin-top:-50px;}
+	.contant_box_404{ margin-top:-50px;};
+    .container1{
+        width: 1400px;
+        margin-right: auto;
+        margin-left: auto;
+    };
+
+    .container{
+        width: 500px;
+        margin-right: auto;
+        margin-left: auto;
+
+    }
+
+    
+
+    
 </style>
 
-<div class="container">
+<div class="container1">
 <section class="page_404">
 	<div class="container">
 		<div class="row">	
