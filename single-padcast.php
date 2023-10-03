@@ -199,7 +199,7 @@
 
                             <a href="<?php the_permalink()?>" class="sidebar__recent__item">
                                 <h6><?php the_title()?></h6>
-                                <p><span class="icon_calendar"></span><?php the_title()?></p>
+                                <p><span class="icon_calendar"></span><?php echo get_the_date()?></p>
                             </a>
 
                             <?php
