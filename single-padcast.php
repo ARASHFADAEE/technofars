@@ -211,13 +211,17 @@
                         <div class="sidebar__banner set-bg" data-setbg="img/episodes-single/sidebar-banner.jpg">
                             <span>بهترین قالب سفارشی</span>
                             <h2>پادکست</h2>
-                        </div>
-                        <div class="sidebar__tags">
-                            <?php
+                        </div>                            <?php
                         if ($query->have_posts()) {
                             while ($query->have_posts()) : $query->the_post();  ?>
-                            <h4>برچسب های محبوب</h4>
-                            <a href="#"><?php the_tags()?></a>
+                            <?php if(the_tags()){?>
+                                    <div class="sidebar__tags">
+
+                                    <h4>برچسب های محبوب</h4>
+                                    <a href="#"><?php the_tags()?></a>
+<?php
+                            }?>
+
                             <?php
    endwhile;
 }
