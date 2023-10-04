@@ -22,9 +22,9 @@
                 <div class="hero__text">
                     <h5><span class="icon_calendar"></span><?php the_date();?></h5>
                     <h2><?php the_title()?></h2>
-                    <p><?php echo get_the_excerpt($query)?></p>
+                    <p><?php the_excerpt()?></p>
                     <a href="#" class="primary-btn">اشتراک ویژه</a>
-                    <a href="#" class="primary-btn white-btn">ثبت نام رایگان</a>
+                    <a href="<?php the_permalink()?>" class="primary-btn white-btn">مشاهده پادکست</a>
                 </div>
             </div>
             <div class="col-lg-6">
