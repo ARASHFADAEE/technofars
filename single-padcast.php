@@ -20,7 +20,7 @@
                             while ($query->have_posts()) : $query->the_post();  ?>
                         <ul>
                             <li><span class="icon_calendar"></span><?php the_date()?></li>
-                            <li><span class="icon_tags_alt"></span><?php the_category()?></li>
+                            <li><span class="icon_tags_alt"></span><?php the_taxonomies()?></li>
                         </ul>
                         <h2><?php the_title()?></h2>
 <?php
@@ -213,14 +213,15 @@
                             <h2>پادکست</h2>
                         </div>
                         <div class="sidebar__tags">
+                            <?php
+                        if ($query->have_posts()) {
+                            while ($query->have_posts()) : $query->the_post();  ?>
                             <h4>برچسب های محبوب</h4>
-                            <a href="#">رمان</a>
-                            <a href="#">ایده_پردازی</a>
-                            <a href="#">پادکست</a>
-                            <a href="#">ویدیو</a>
-                            <a href="#">خلاقیت</a>
-                            <a href="#">ورزش</a>
-                            <a href="#">موزیک</a>
+                            <a href="#"><?php the_tags()?></a>
+                            <?php
+   endwhile;
+}
+?>
                         </div>
                     </div>
                 </div>

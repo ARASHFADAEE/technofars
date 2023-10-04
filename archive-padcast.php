@@ -103,23 +103,36 @@ wp_reset_postdata();?>
 
                         </div>
                         <div class="sidebar__recent">
-                            <h4>پست های جدید</h4>
-                            <a href="#" class="sidebar__recent__item">
-                                <h6>قسمت 04 : چگونه یک شبه پولدار شویم - نقد و بررسی</h6>
-                                <p><span class="icon_calendar"></span> یکشنبه 21 مهر 99</p>
+                            <h4>جدید ترین پادکست ها</h4>
+                            <?php
+                            $array = array(
+
+                                'post_type' => 'padcast',
+                            
+                                'posts_per_page' => 6,
+
+                            
+                            );
+                            $query=new WP_Query($array);
+
+                            if ($query->have_posts()) {
+                                while ($query->have_posts()) : $query->the_post(); 
+
+                            ?>
+
+
+                            <a href="<?php the_permalink()?>" class="sidebar__recent__item">
+                                <h6><?php the_title()?></h6>
+                                <p><span class="icon_calendar"></span><?php echo get_the_date()?></p>
                             </a>
-                            <a href="#" class="sidebar__recent__item">
-                                <h6>قسمت 07 : چگونه یک مهندس نرم افزار موفق شویم</h6>
-                                <p><span class="icon_calendar"></span> یکشنبه 21 مهر 99</p>
-                            </a>
-                            <a href="#" class="sidebar__recent__item">
-                                <h6>قسمت 03 : رازهای جهان هستی و کهکشان ها</h6>
-                                <p><span class="icon_calendar"></span> یکشنبه 21 مهر 99</p>
-                            </a>
-                            <a href="#" class="sidebar__recent__item">
-                                <h6> قسمت 21 : رادیو صدای شب - ایده پردازی و اجرا</h6>
-                                <p><span class="icon_calendar"></span> یکشنبه 21 مهر 99</p>
-                            </a>
+
+                            <?php
+   endwhile;
+}
+
+?>
+                            
+
                         </div>
                         <div class="sidebar__banner set-bg" data-setbg="img/episodes-single/sidebar-banner.jpg">
                             <span>بهترین قالب سفارشی</span>
