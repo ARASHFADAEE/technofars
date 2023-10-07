@@ -3,7 +3,7 @@
 
 <?php get_header()?>
 <!-- Breadcrumb Section Begin -->
-<section class="breadcrumb-option normal-breadcrumb spad set-bg" data-setbg="<?php get_template_directory_uri()?>/img/breadcrumb-bg.jpg" style="background-image: url();">
+<section class="breadcrumb-option normal-breadcrumb spad set-bg" data-setbg="<?php echo get_template_directory_uri()?>/img/breadcrumb-bg.jpg" style="background-image: url(<?php echo get_template_directory_uri()?>/img/breadcrumb-bg.jpg);">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -58,7 +58,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="about__pic">
-                    <img src="<?php get_template_directory_uri()?>/img/about-pic.jpg" alt="">
+                    <img src="<?php echo get_template_directory_uri()?>/img/about-pic.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -67,7 +67,7 @@
 <!-- About Section End -->
 
 <!-- Call To Action Section Begin -->
-<section class="callto spad set-bg" data-setbg="<?php get_template_directory_uri()?>/img/call-about-bg.jpg">
+<section class="callto spad set-bg" data-setbg="<?php echo get_template_directory_uri()?>/img/call-about-bg.jpg">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -96,21 +96,21 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="team__item">
-                    <img src="<?php get_template_directory_uri()?>/img/team/team-1.jpg" alt="">
+                    <img src="<?php echo get_template_directory_uri()?>/img/team/team-1.jpg" alt="">
                     <h4>سیروان ویسی</h4>
                     <span>کارگردان</span>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="team__item">
-                    <img src="<?php get_template_directory_uri()?>/img/team/team-2.jpg" alt="">
+                    <img src="<?php echo get_template_directory_uri()?>/img/team/team-2.jpg" alt="">
                     <h4>سیروان ویسی</h4>
                     <span>تهیه کننده</span>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="team__item">
-                    <img src="<?php get_template_directory_uri()?>/img/team/team-3.jpg" alt="">
+                    <img src="<?php echo get_template_directory_uri()?>/img/team/team-3.jpg" alt="">
                     <h4>سیروان ویسی</h4>
                     <span>کارآفرین</span>
                 </div>

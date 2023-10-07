@@ -2,7 +2,7 @@
 <?php get_header()?>
 
 <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-option normal-breadcrumb spad set-bg" data-setbg="img/breadcrumb-bg.jpg">
+    <section class="breadcrumb-option normal-breadcrumb spad set-bg" data-setbg="<?php echo get_template_directory_uri()?>/img/breadcrumb-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -32,21 +32,21 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="contact__widget__item">
-                    <img src="img/icons/ci-1.png" alt="">
+                    <img src="<?php echo get_template_directory_uri()?>/img/icons/ci-1.png" alt="">
                     <h4>آدرس</h4>
                     <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ است.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="contact__widget__item">
-                    <img src="img/icons/ci-2.png" alt="">
+                    <img src="<?php echo get_template_directory_uri()?>/img/icons/ci-2.png" alt="">
                     <h4>شماره تماس</h4>
                     <p class="text-center ltr">(+98) 333 333 3333 <span>(+98) 555 555 5555</span></p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="contact__widget__item">
-                    <img src="img/icons/ci-3.png" alt="">
+                    <img src="<?php echo get_template_directory_uri()?>/img/icons/ci-3.png" alt="">
                     <h4>ساعات کاری</h4>
                     <p class="text-center">بازگشایی: 9 صبح تا 5 بعدازظهر <span>(جمعه ها تعطیل)</span></p>
                 </div>
